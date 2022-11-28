@@ -20,22 +20,22 @@ public class Board {
 
     // TO GET THE APPROPRIATE ROW FOR EACH MOVE OF THE PLAYERS //
     public int getCurrentRow(int currentColumn) {
-        int row = -1;                                           // Initially, the current status of the board is -1
-        for (int i = this.BOARD.length-1; i >= 0 ; i--) {
-            if (this.BOARD[i][currentColumn] == 0) {
-                row = i;
-                break;
+        int row = -1;                                           // Initially, the current status of the board is -1 (INVALID)
+        for (int i = this.BOARD.length-1; i >= 0 ; i--) {      //  Set a loop starting from the top row of a column down to bottom
+            if (this.BOARD[i][currentColumn] == 0) {          //   IF found the available row (all free spots are assigned as 0)
+                row = i;                                     //    return the row
+                break;                                      //     then Break, exit the function.
             }
         }
-        return row;
+        return row;                                       //        IF there is no free row (aka column is full)
     }
 
     // PRINTS OUT THE GAME BOARD AFTER EACH MOVE //
     public void printGameBoard() {
-        for (int[] ints : this.BOARD) {
+        for (int[] ints : this.BOARD) {                                 // Separate by an ENTER
             System.out.println();
-            for (int col = 0; col < this.BOARD[0].length; col++) {
-                System.out.print("|" + ints[col] + "|");
+            for (int col = 0; col < this.BOARD[0].length; col++) {    //   Set a loop prints out the status of all spots
+                System.out.print("|" + ints[col] + "|");             //    in the game board
             }
         }
         System.out.println();
