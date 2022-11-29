@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 public class ConnectFiveMain{
-    public static String player1Name = null;      // A variable to hold the name of Player 1
-    public static String player2Name = null;    //   A variable to hold the name of Player 2
+    public static String player1Name = null;      //  A variable to hold the name of Player 1
+    public static String player2Name = null; //   A variable to hold the name of Player 2
 
     public static void main(String[] args){
         intro();                                                                            // Display intro message to players
@@ -31,9 +31,9 @@ public class ConnectFiveMain{
             int movement = 0;        //  The movement of the Players will be reset back to 0 after each move
             try {
                 if (playersTurn == 1) {   // Update new move for Player 1
-                    movement = player.generateMove(playersTurn, maxColumn, player1Name);
+                    movement = player.generateMove(playersTurn, maxColumn, player1Name, b);
                 } else {                //   Update new move for Player 2
-                    movement = player.generateMove(playersTurn, maxColumn, player2Name);
+                    movement = player.generateMove(playersTurn, maxColumn, player2Name, b);
                 }
             }
             // Catch the exception when the movement update is invalid
@@ -44,18 +44,20 @@ public class ConnectFiveMain{
                 int currentRow = b.getCurrentRow(movement-1);            // Get the suitable row for each movement
                 if (currentRow == -1){                                              //  Theoretically, a free spot will hold a "O" value
                                                                                    //   If the input was invalid, "-1" will be returned and keep running
-                    player.errorMessage("PLEASE RE-SELECT THE COLUMN");    //    till player can find a suitable spot.
+                    player.errorMessage("PLEASE RE-SELECT THE COLUMN");           //    till player can find a suitable spot.
                 // When player's move is approved
-                } else {
-                    playingBoard[currentRow][movement-1] = playersTurn;         // Fill the spot with player's assigned number
-                    b.printGameBoard();                                        //  Print the current game board (with updated moved)
-                    // Each player alternated their turn after each move
-                    if (playersTurn == 1){
-                        playersTurn = 2;
-                    } else {
-                        playersTurn = 1;
-                    }
+            } else {
+                playingBoard[currentRow][movement - 1] = playersTurn; // Fill the spot with player's assigned number
+                b.printGameBoard();        //  Print the current game board (with updated moved)
+                if (b.checkWinner(playersTurn, currentRow, movement)) {
+                    break;
                 }
+                if (playersTurn == 1) {   //   Each player alternated their turn after each move
+                    playersTurn = 2;
+                } else {
+                    playersTurn = 1;
+                }
+            }
             }
         }
     }
@@ -83,7 +85,7 @@ public class ConnectFiveMain{
         String playerOne = console1.next();
         System.out.print("Second player:\t");
         String playerTwo = console1.next();
-        System.out.println("[" + playerOne + "]" + " *VS* " + "[" + playerTwo + "]");
+        System.out.println("\n[" + playerOne + "]" + " *VS* " + "[" + playerTwo + "]");
         player1Name = playerOne;
         player2Name = playerTwo;
         System.out.println("\nSounds good. Shall we start now!!!!\n");

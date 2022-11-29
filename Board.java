@@ -1,9 +1,12 @@
+import java.util.Currency;
 import java.util.Scanner;
 
 public class Board {
 
     // Declare a variable toi hold the status of the current board
     private int[][] BOARD;
+    private Player player;
+    private static boolean foundWinner = false;
 
     // TO GENERATE THE PLAYING BOARD BASED ON USERS' CHOICE
     public void generateBoard() {
@@ -29,7 +32,7 @@ public class Board {
                 break;                                      //     then Break, exit the function.
             }
         }
-        return row;                                       //        IF there is no free row (aka column is full)
+        return row;                                       //        Return the row
     }
 
     // PRINTS OUT THE GAME BOARD AFTER EACH MOVE //
@@ -44,46 +47,51 @@ public class Board {
     }
 
     // CHECK WINNING CONDITION FOR VERTICAL //
-    public boolean checkWinningVertical(int currentRow, int maxColumn, int[][] currentBoard, int currentPlayer, String playerName){
+    public boolean checkWinningVertical(int currentRow, int currentPlayer){
         int streak = 0;
-        boolean foundWinner = false;
-        for(int column = 0; column < maxColumn; column++){
-            if(currentBoard[currentRow][column] == currentPlayer){
+        for(int column = 0; column < this.BOARD[0].length; column++){
+            if(this.BOARD[currentRow][column] == currentPlayer){
                 streak += 1;
                 if(streak == 5) {
-                    System.out.println(playerName + " wins by Vertical!!!!");
-                    foundWinner = true;
+                    System.out.println("Player " + currentPlayer + " wins by Vertical!!!!");
+                    return true;
                 }
-            }
-            streak = 0;
-            foundWinner = false;
+            } else {
+                streak = 0;
+            }  
         }
-        return foundWinner;
+        return false;
     }
 
     // CHECK WINNING CONDITION FOR HORIZONTAL //
-    public boolean checkWinningHorizontal(int currentColumn, int maxRow, int[][] currentBoard, int currentPlayer, String playerName){
+    public boolean checkWinningHorizontal(int currentColumn, int currentPlayer){
         int streak = 0;
-        boolean foundWinner = false;
-        for(int row = 0; row < maxRow; row++){
-            if(currentBoard[row][currentColumn] == currentPlayer){
+        for(int row = 0; row < this.BOARD.length; row++){
+            if(this.BOARD[row][currentColumn] == currentPlayer){
                 streak += 1;
                 if(streak == 5) {
-                    System.out.println(playerName + " wins by Horizontal!!!!");
-                    foundWinner = true;
+                    System.out.println("Player " + currentPlayer + " wins by Horizontal!!!!");
+                    return true;
                 }
+            } else {
+                  streak = 0;
             }
-            streak = 0;
-            foundWinner = false;
         }
-        return foundWinner;
+        return false;
     }
 
     // CHECK WINNING CONDITION FOR DIAGONAL //
-    public boolean checkWinningDiagonal(){
+    public boolean checkWinningDiagonal() {
         int streak = 0;
         boolean foundWinner = false;
         return foundWinner;
+    }
+    
+    public boolean checkWinner(int currentPlayer, int currentX, int currentY ) {
+        if (checkWinningHorizontal(currentY, currentPlayer) || checkWinningVertical(currentX, currentPlayer)) {
+            return true;
+        }
+        return false;
     }
 
 }
