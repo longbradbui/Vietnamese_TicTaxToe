@@ -44,7 +44,7 @@ public class Board {
     }
 
     // CHECK WINNING CONDITION FOR VERTICAL //
-    public boolean checkWinningVertical(int currentRow, int maxColumn, int[][] currentBoard, int currentPlayer, String playerName){
+    private boolean checkWinningVertical(int currentRow, int maxColumn, int[][] currentBoard, int currentPlayer, String playerName){
         int streak = 0;
         for(int column = 0; column < maxColumn; column++){
             if(currentBoard[currentRow][column] == currentPlayer){
@@ -60,7 +60,7 @@ public class Board {
     }
 
     // CHECK WINNING CONDITION FOR HORIZONTAL //
-    public boolean checkWinningHorizontal(int currentColumn, int maxRow, int[][] currentBoard, int currentPlayer, String playerName){
+    private boolean checkWinningHorizontal(int currentColumn, int maxRow, int[][] currentBoard, int currentPlayer, String playerName){
         int streak = 0;
         for(int row = 0; row < maxRow; row++){
             if(currentBoard[row][currentColumn] == currentPlayer){
@@ -71,12 +71,13 @@ public class Board {
                 }
             }
             streak = 0;
+
         }
         return true;
     }
 
     // CHECK WINNING CONDITION FOR DIAGONAL //
-    public boolean checkWinningDiagonal(){
+    private boolean checkWinningDiagonal(){
         return true;
     }
 

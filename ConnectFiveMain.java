@@ -25,9 +25,9 @@ public class ConnectFiveMain{
         int [][] playingBoard = b.getBoard();         //        Declare a 2D array that will save the state of the board after each move of the player
         maxColumn = playingBoard[0].length;          //         The maximum column size is the length of the child array
         maxRow = playingBoard.length;               //          The maximum column size is the length of the parent array
-        boolean isTrue = true;                     //           Declare a boolean variable to validate the continuity of the game
+        boolean foundWinner = false;                     //           Declare a boolean variable to validate the continuity of the game
         // GAME STARTS FROM HERE //
-        while (isTrue){         // The game will keep going until the validation becomes FALSE
+        while (foundWinner){         // The game will keep going until the validation becomes FALSE
             int movement = 0;  //  The movement of the Players will be reset back to 0 after each move
             try {
                 if (playersTurn == 1) {   // Update new move for Player 1
