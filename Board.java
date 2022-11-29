@@ -81,11 +81,11 @@ public class Board {
     }
 
     // CHECK WINNING CONDITION FOR DIAGONAL //
-    public boolean checkWinningDiagonal() {
-        int streak = 0;
-        boolean foundWinner = false;
-        return foundWinner;
-    }
+    // public boolean checkWinningDiagonal() {
+    //     int streak = 0;
+    //     boolean foundWinner = false;
+    //     return foundWinner;
+    // }
     
     public boolean checkWinner(int currentPlayer, int currentX, int currentY ) {
         if (checkWinningHorizontal(currentY, currentPlayer) || checkWinningVertical(currentX, currentPlayer)) {
