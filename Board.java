@@ -44,41 +44,46 @@ public class Board {
     }
 
     // CHECK WINNING CONDITION FOR VERTICAL //
-    private boolean checkWinningVertical(int currentRow, int maxColumn, int[][] currentBoard, int currentPlayer, String playerName){
+    public boolean checkWinningVertical(int currentRow, int maxColumn, int[][] currentBoard, int currentPlayer, String playerName){
         int streak = 0;
+        boolean foundWinner = false;
         for(int column = 0; column < maxColumn; column++){
             if(currentBoard[currentRow][column] == currentPlayer){
                 streak += 1;
                 if(streak == 5) {
                     System.out.println(playerName + " wins by Vertical!!!!");
-                    return false;
+                    foundWinner = true;
                 }
             }
-                streak = 0;
+            streak = 0;
+            foundWinner = false;
         }
-        return true;
+        return foundWinner;
     }
 
     // CHECK WINNING CONDITION FOR HORIZONTAL //
-    private boolean checkWinningHorizontal(int currentColumn, int maxRow, int[][] currentBoard, int currentPlayer, String playerName){
+    public boolean checkWinningHorizontal(int currentColumn, int maxRow, int[][] currentBoard, int currentPlayer, String playerName){
         int streak = 0;
+        boolean foundWinner = false;
         for(int row = 0; row < maxRow; row++){
             if(currentBoard[row][currentColumn] == currentPlayer){
                 streak += 1;
                 if(streak == 5) {
                     System.out.println(playerName + " wins by Horizontal!!!!");
-                    return false;
+                    foundWinner = true;
                 }
             }
             streak = 0;
-
+            foundWinner = false;
         }
-        return true;
+        return foundWinner;
     }
 
     // CHECK WINNING CONDITION FOR DIAGONAL //
-    private boolean checkWinningDiagonal(){
-        return true;
+    public boolean checkWinningDiagonal(){
+        int streak = 0;
+        boolean foundWinner = false;
+        return foundWinner;
     }
 
 }

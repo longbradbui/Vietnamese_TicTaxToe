@@ -8,7 +8,7 @@ public class ConnectFiveMain{
         intro();                                                                            // Display intro message to players
         Scanner console = new Scanner(System.in);                                          //  Construct a Scanner to scanner for player's choice
         String userInput = console.next();                                                //   Prompt user's console
-        if (userInput == null || (!userInput.equals("Y")) && !(userInput.equals("N"))){  //    Test for user's input
+        if (userInput == null){                                                          //    Test for user's input
             System.out.println("Invalid Input, please type Y or N.");
         }
         if (userInput != null && (userInput.equals("y") || userInput.equals("Y")
@@ -25,10 +25,10 @@ public class ConnectFiveMain{
         int [][] playingBoard = b.getBoard();         //        Declare a 2D array that will save the state of the board after each move of the player
         maxColumn = playingBoard[0].length;          //         The maximum column size is the length of the child array
         maxRow = playingBoard.length;               //          The maximum column size is the length of the parent array
-        boolean foundWinner = false;                     //           Declare a boolean variable to validate the continuity of the game
+        boolean gameContinue = true;               //           Declare a boolean variable to validate the continuity of the game
         // GAME STARTS FROM HERE //
-        while (foundWinner){         // The game will keep going until the validation becomes FALSE
-            int movement = 0;  //  The movement of the Players will be reset back to 0 after each move
+        while (gameContinue){         // The game will keep going until the validation becomes FALSE
+            int movement = 0;        //  The movement of the Players will be reset back to 0 after each move
             try {
                 if (playersTurn == 1) {   // Update new move for Player 1
                     movement = player.generateMove(playersTurn, maxColumn, player1Name);
