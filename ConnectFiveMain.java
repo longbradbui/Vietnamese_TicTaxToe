@@ -15,15 +15,17 @@ public class ConnectFiveMain{
                || userInput.equals("yes") || userInput.equals("Yes"))) {             // Test for user's input
             showRule();                                                             //  Show the rule as players' wish
         }
-        getToKnow();                                        //  Get to know our players and save player's name to the "playerName" variable
-        Player player = new Player();                      //   Generate Player Object
-        Board b = new Board();                            //    Generate Board Object
-        int maxColumn;                                   //     Declare a variable that will hold the maximum column for each game
+        getToKnow();                                         // Get to know our players and save player's name to the "playerName" variable
+        Player player = new Player();                       //  Generate Player Object
+        Board b = new Board();                             //   Generate Board Object
+        int maxColumn;                                    //    Declare a variable that will hold the maximum column for each game
+        int maxRow;                                      //     Declare a variable that will hold the maximum column for each game
         int playersTurn = player.assignPlayers();       //      Declare a variable that will keep track the turn
         b.generateBoard();                             //       Initially, We have to generate the Game Board
         int [][] playingBoard = b.getBoard();         //        Declare a 2D array that will save the state of the board after each move of the player
-        maxColumn = playingBoard[0].length;          //         The maximum column size is the length of the first child array
-        boolean isTrue = true;                      //          Declare a boolean variable to validate the continuity of the game
+        maxColumn = playingBoard[0].length;          //         The maximum column size is the length of the child array
+        maxRow = playingBoard.length;               //          The maximum column size is the length of the parent array
+        boolean isTrue = true;                     //           Declare a boolean variable to validate the continuity of the game
         // GAME STARTS FROM HERE //
         while (isTrue){         // The game will keep going until the validation becomes FALSE
             int movement = 0;  //  The movement of the Players will be reset back to 0 after each move

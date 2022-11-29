@@ -43,6 +43,43 @@ public class Board {
         System.out.println();
     }
 
+    // CHECK WINNING CONDITION FOR VERTICAL //
+    public boolean checkWinningVertical(int currentRow, int maxColumn, int[][] currentBoard, int currentPlayer, String playerName){
+        int streak = 0;
+        for(int column = 0; column < maxColumn; column++){
+            if(currentBoard[currentRow][column] == currentPlayer){
+                streak += 1;
+                if(streak == 5) {
+                    System.out.println(playerName + " wins by Vertical!!!!");
+                    return false;
+                }
+            }
+                streak = 0;
+        }
+        return true;
+    }
+
+    // CHECK WINNING CONDITION FOR HORIZONTAL //
+    public boolean checkWinningHorizontal(int currentColumn, int maxRow, int[][] currentBoard, int currentPlayer, String playerName){
+        int streak = 0;
+        for(int row = 0; row < maxRow; row++){
+            if(currentBoard[row][currentColumn] == currentPlayer){
+                streak += 1;
+                if(streak == 5) {
+                    System.out.println(playerName + " wins by Horizontal!!!!");
+                    return false;
+                }
+            }
+            streak = 0;
+        }
+        return true;
+    }
+
+    // CHECK WINNING CONDITION FOR DIAGONAL //
+    public boolean checkWinningDiagonal(){
+        return true;
+    }
+
 }
 
 
