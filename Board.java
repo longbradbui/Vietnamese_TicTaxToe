@@ -1,6 +1,8 @@
 import java.util.Scanner;
 
 public class Board {
+
+    // Declare a variable toi hold the status of the current board
     private int[][] BOARD;
 
     // TO GENERATE THE PLAYING BOARD BASED ON USERS' CHOICE
