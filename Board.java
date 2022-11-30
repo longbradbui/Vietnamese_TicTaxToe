@@ -3,12 +3,9 @@ import java.util.Scanner;
 
 public class Board {
 
-    // Declare a variable toi hold the status of the current board
-    private int[][] BOARD;
-    private Player player;
-    private static boolean foundWinner = false;
+    private int[][] BOARD;     // Declare a variable to hold the status of the current board
 
-    // TO GENERATE THE PLAYING BOARD BASED ON USERS' CHOICE
+    // TO GENERATE THE PLAYING BOARD BASED ON USERS' CHOICE //
     public void generateBoard() {
         Scanner console2 = new Scanner(System.in);                      // Construct a Scanner
         System.out.println("How many rows would you like?");
@@ -48,34 +45,34 @@ public class Board {
 
     // CHECK WINNING CONDITION FOR VERTICAL //
     public boolean checkWinningVertical(int column, int currentPlayer){
-        int streak = 0;
-        for(int row = 0; row < this.BOARD.length; row++){
-            if(this.BOARD[row][column] == currentPlayer){
-                streak += 1;
-                if(streak == 5) {
-                    return true;
+        int streak = 0;                                         // Declare a variable to keep track of the continuity of dots
+        for(int row = 0; row < this.BOARD.length; row++){      //  Since we are validating in a VERTICAL so only ROW param is incrementing
+            if(this.BOARD[row][column] == currentPlayer){     //   If any increment of row in a static column contains are same numbers
+                streak += 1;                                 //    Then increase the steak by 1
+                if(streak == 5) {                           //     Once the streak hits 5 in a row
+                    return true;                           //      Return true, we found the winner of the game
                 }
-            } else {
+            } else {                                     //        If not, then reset the streak back to 0
                 streak = 0;
             }
         }
-        return false;
+        return false;                               //             Return false, we did not find any winner
     }
 
     // CHECK WINNING CONDITION FOR HORIZONTAL //
     public boolean checkWinningHorizontal(int row, int currentPlayer){
-        int streak = 0;
-        for(int column = 0; column < this.BOARD[0].length; column++){
-            if(this.BOARD[row][column] == currentPlayer){
-                streak += 1;
-                if(streak == 5) {
-                    return true;
+        int streak = 0;                                                       // Declare a variable to keep track of the continuity of dots
+        for(int column = 0; column < this.BOARD[0].length; column++){        //  Since we are validating in a HORIZONTAL so only COLUMN param is incrementing
+            if(this.BOARD[row][column] == currentPlayer){                   //   If any increment of row in a static column contains are same numbers
+                streak += 1;                                               //    Then increase the steak by 1
+                if(streak == 5) {                                         //     Once the streak hits 5 in a row
+                    return true;                                         //      Return true, we found the winner of the game
                 }
-            } else {
+            } else {                                                   //        If not, then reset the streak back to 0
                   streak = 0;
             }
         }
-        return false;
+        return false;                                              //             Return false, we did not find any winner
     }
 
     // CHECK WINNING CONDITION FOR DIAGONAL //
