@@ -40,17 +40,21 @@ public class ConnectFiveMain{
                 System.out.println("PLEASE CHOOSE A COLUMN RANGE FROM 1 TO " + maxColumn);
             }
             if (movement != 0){
-                int currentRow = b.getCurrentRow(movement-1);            // Get the suitable row for each movement
-                if (currentRow == -1){                                              //  Theoretically, a free spot will hold a "O" value
-                    player.errorMessage("PLEASE RE-SELECT THE COLUMN");     //   If the input was invalid, "-1" will be returned and keep running till player can find a suitable spot.
+                int currentRow = b.getCurrentRow(movement-1);                 // Get the suitable row for each movement
+                if (currentRow == -1){                                                   //  Theoretically, a free spot will hold a "O" value
+                    player.errorMessage("PLEASE RE-SELECT THE COLUMN");          //   If the input was invalid, "-1" will be returned and keep running till player can find a suitable spot.
             } else {
                 playingBoard[currentRow][movement-1] = playersTurn;              
                 b.printGameBoard();
-                if (b.checkWinner(playersTurn, currentRow, movement-1)) {
-                    System.out.println("\nPlayer " + playersTurn + " wins");
+                if (b.checkWinningHorizontal(currentRow, playersTurn)){
+                    System.out.println("\nPlayer " + playersTurn + " wins by Horizontal - [ROW " + currentRow + "]");
                     break;
                 }
-                if (playersTurn == 1) {                                            // Each player alternates turn after each move
+                if (b.checkWinningVertical(movement-1, playersTurn)){
+                    System.out.println("\nPlayer " + playersTurn + " wins by Vertical - [COLUMN " + movement + "]");
+                    break;
+                }
+                if (playersTurn == 1) {
                     playersTurn = 2;
                 } else {
                     playersTurn = 1;
@@ -70,9 +74,9 @@ public class ConnectFiveMain{
     // TO EXPLAIN RULE TO NEW PLAYERS //
     public static void showRule (){
         System.out.println("\nTo be the first player to connect FIVE of the same dots in a row (either vertically, horizontally, or diagonally)");
-        System.out.println("First, decide who will go first and decide the character to play with");
-        System.out.println("Players must alternate turns, and only dot can be dropped in each turn");
-        System.out.println("On your turn, drop one of your dots from the top into any of the slots");
+        System.out.println("Players must alternate turns, only ONE dot can be dropped in each turn");
+        System.out.println("On your turn, drop your move from the top into any of the slots");
+        System.out.println("Your dot will be placed at the FREE-MOST BOTTOM spot in the column that you have chosen");
         System.out.println("The game ends when there is a FIVE-IN-A-ROW!!!! \n");
     }
 

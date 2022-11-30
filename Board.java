@@ -84,13 +84,6 @@ public class Board {
          boolean foundWinner = false;
          return foundWinner;
      }
-    
-   public boolean checkWinner(int currentPlayer, int staticX, int staticY ) {
-       if (checkWinningHorizontal(staticX, currentPlayer) || checkWinningVertical(staticY, currentPlayer)) {
-           return true;
-       }
-       return false;
-   }
 
 }
 
