@@ -58,7 +58,7 @@ public class ConnectFiveMain {
         b.generateBoard();                             //          Initially, We have to generate the Game Board
         int[][] playingBoard = b.getBoard();          //           Declare a 2D array that will save the state of the board after each move of the player
         maxColumn = playingBoard[0].length;          //            The maximum column size is the length of the child array
-        maxRow = playingBoard.length;               //             The maximum column size is the length of the parent arrayn
+        maxRow = playingBoard.length;               //             The maximum column size is the length of the parent array
         boolean gameContinue = true;               //              Declare a boolean variable to validate the continuity of the game
         while (gameContinue) {                    //               The game will keep going until the validation becomes FALSE
             int movement = 0;                    //                The movement of the Players will be reset back to 0 after each move
@@ -93,11 +93,11 @@ public class ConnectFiveMain {
                         break; // Exits out of the method if winner were found //
                     }
                     // Check if the current player in wining diagonally
-                    if (b.checkWinningDiagonal()) {
-                        System.out.println("\nPlayer " + playersTurn + " wins by Diagonal");
-                        System.out.println("\t\t------*****------\n");
-                        break; // Exits out of the method if winner were found //
-                    }
+//                    if (b.checkWinningDiagonal(movement, currentRow, playersTurn)) {
+//                        System.out.println("\nPlayer " + playersTurn + " wins by Diagonal");
+//                        System.out.println("\t\t------*****------\n");
+//                        break;
+//                    }
                     // If no winner were found, each player alternates their turn //
                     if (playersTurn == 1) {
                         playersTurn = 2;

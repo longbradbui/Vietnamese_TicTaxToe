@@ -44,42 +44,81 @@ public class Board {
     }
 
     // CHECK WINNING CONDITION FOR VERTICAL //
-    public boolean checkWinningVertical(int column, int currentPlayer) {
-        int streak = 0;                                         // Declare a variable to keep track of the continuity of dots
+    public boolean checkWinningVertical(int col, int currentPlayer) {
+        int streak = 0;                                           // Declare a variable to keep track of the continuity of dots
         for (int row = 0; row < this.BOARD.length; row++) {      //  Since we are validating in a VERTICAL so only ROW param is incrementing
-            if (this.BOARD[row][column] == currentPlayer) {     //   If any increment of row in a static column contains are same numbers
-                streak += 1;                                 //    Then increase the steak by 1
-                if (streak == 5) {                           //     Once the streak hits 5 in a row
-                    return true;                           //      Return true, we found the winner of the game
+            if (this.BOARD[row][col] == currentPlayer) {        //   If any increment of row in a static column contains are same numbers
+                streak += 1;                                   //    Then increase the steak by 1
+                if (streak == 5) {                            //     Once the streak hits 5 in a row
+                    return true;                             //      Return true, we found the winner of the game
                 }
-            } else {                                     //        If not, then reset the streak back to 0
+            } else {                                       //        If not, then reset the streak back to 0
                 streak = 0;
             }
         }
-        return false;                               //             Return false, we did not find any winner
+        return false;                                 //             Return false, we did not find any winner
     }
 
     // CHECK WINNING CONDITION FOR HORIZONTAL //
     public boolean checkWinningHorizontal(int row, int currentPlayer) {
-        int streak = 0;                                                       // Declare a variable to keep track of the continuity of dots
+        int streak = 0;                                                         // Declare a variable to keep track of the continuity of dots
         for (int column = 0; column < this.BOARD[0].length; column++) {        //  Since we are validating in a HORIZONTAL so only COLUMN param is incrementing
             if (this.BOARD[row][column] == currentPlayer) {                   //   If any increment of row in a static column contains are same numbers
-                streak += 1;                                               //    Then increase the steak by 1
-                if (streak == 5) {                                         //     Once the streak hits 5 in a row
-                    return true;                                         //      Return true, we found the winner of the game
+                streak += 1;                                                 //    Then increase the steak by 1
+                if (streak == 5) {                                          //     Once the streak hits 5 in a row
+                    return true;                                           //      Return true, we found the winner of the game
                 }
-            } else {                                                   //        If not, then reset the streak back to 0
+            } else {                                                     //        If not, then reset the streak back to 0
                 streak = 0;
             }
         }
-        return false;                                              //             Return false, we did not find any winner
+        return false;                                                 //             Return false, we did not find any winner
     }
 
     // CHECK WINNING CONDITION FOR DIAGONAL //
-    public boolean checkWinningDiagonal() {
+    public boolean checkWinningDiagonal(int col, int row, int currentPlayer) {
+        int streak = 0;
 
+        while (row != 0 && col != 0) {
+            col --;
+            row --;
+            System.out.println(col);
+            System.out.println(row);
+        }
+        while (row < this.BOARD.length && col < this.BOARD[0].length){
+            if (this.BOARD[row][col] == currentPlayer){
+                streak++;
+                row++;
+                col++;
+                if (streak == 5){
+                    return true;
+                }
+            } else {
+                streak = 0;
+            }
+        }
+//        copyRow = row;
+//        copyCol = col;
+//        while (copyRow != 0 && copyCol !=0) {
+//            copyRow --;
+//            copyCol ++;
+//        }
+//        while (copyRow < this.BOARD.length && copyCol < this.BOARD[0].length){
+//            if (this.BOARD[copyRow][copyCol] == currentPlayer){
+//                streak++;
+//                copyRow--;
+//                copyCol++;
+//                if (streak == 5){
+//                    return true;
+//                }
+//            } else {
+//                streak = 0;
+//            }
+//        }
         return false;
     }
+
+
 }
 
 
