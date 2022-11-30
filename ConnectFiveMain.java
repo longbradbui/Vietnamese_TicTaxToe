@@ -92,6 +92,12 @@ public class ConnectFiveMain {
                         System.out.println("\t\t------*****------\n");
                         break; // Exits out of the method if winner were found //
                     }
+                    // Check if the current player in wining diagonally
+                    if (b.checkWinningDiagonal()) {
+                        System.out.println("\nPlayer " + playersTurn + " wins by Diagonal");
+                        System.out.println("\t\t------*****------\n");
+                        break; // Exits out of the method if winner were found //
+                    }
                     // If no winner were found, each player alternates their turn //
                     if (playersTurn == 1) {
                         playersTurn = 2;
