@@ -44,8 +44,12 @@ public class ConnectFiveMain{
                 if (currentRow == -1){                                              //  Theoretically, a free spot will hold a "O" value
                     player.errorMessage("PLEASE RE-SELECT THE COLUMN");     //   If the input was invalid, "-1" will be returned and keep running till player can find a suitable spot.
             } else {
-                playingBoard[currentRow][movement-1] = playersTurn;
+                playingBoard[currentRow][movement-1] = playersTurn;              
                 b.printGameBoard();
+                if (b.checkWinner(playersTurn, currentRow, movement-1)) {
+                    System.out.println("\nPlayer " + playersTurn + " wins");
+                    break;
+                }
                 if (playersTurn == 1) {                                            // Each player alternates turn after each move
                     playersTurn = 2;
                 } else {
@@ -65,7 +69,7 @@ public class ConnectFiveMain{
 
     // TO EXPLAIN RULE TO NEW PLAYERS //
     public static void showRule (){
-        System.out.println("\n To be the first player to connect FIVE of the same dots in a row (either vertically, horizontally, or diagonally)");
+        System.out.println("\nTo be the first player to connect FIVE of the same dots in a row (either vertically, horizontally, or diagonally)");
         System.out.println("First, decide who will go first and decide the character to play with");
         System.out.println("Players must alternate turns, and only dot can be dropped in each turn");
         System.out.println("On your turn, drop one of your dots from the top into any of the slots");

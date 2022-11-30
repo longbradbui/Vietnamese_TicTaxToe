@@ -47,26 +47,26 @@ public class Board {
     }
 
     // CHECK WINNING CONDITION FOR VERTICAL //
-    public boolean checkWinningVertical(int currentRow, int currentPlayer){
+    public boolean checkWinningVertical(int column, int currentPlayer){
         int streak = 0;
-        for(int column = 0; column < this.BOARD[0].length; column++){
-            if(this.BOARD[currentRow][column] == currentPlayer){
+        for(int row = 0; row < this.BOARD.length; row++){
+            if(this.BOARD[row][column] == currentPlayer){
                 streak += 1;
                 if(streak == 5) {
                     return true;
                 }
             } else {
                 streak = 0;
-            }  
+            }
         }
         return false;
     }
 
     // CHECK WINNING CONDITION FOR HORIZONTAL //
-    public boolean checkWinningHorizontal(int currentColumn, int currentPlayer){
+    public boolean checkWinningHorizontal(int row, int currentPlayer){
         int streak = 0;
-        for(int row = 0; row < this.BOARD.length; row++){
-            if(this.BOARD[row][currentColumn] == currentPlayer){
+        for(int column = 0; column < this.BOARD[0].length; column++){
+            if(this.BOARD[row][column] == currentPlayer){
                 streak += 1;
                 if(streak == 5) {
                     return true;
@@ -85,12 +85,12 @@ public class Board {
          return foundWinner;
      }
     
-//    public boolean checkWinner(int currentPlayer, int staticX, int staticY ) {
-//        if (checkWinningHorizontal(staticY, currentPlayer) || checkWinningVertical(staticX, currentPlayer)) {
-//            return true;
-//        }
-//        return false;
-//    }
+   public boolean checkWinner(int currentPlayer, int staticX, int staticY ) {
+       if (checkWinningHorizontal(staticX, currentPlayer) || checkWinningVertical(staticY, currentPlayer)) {
+           return true;
+       }
+       return false;
+   }
 
 }
 
