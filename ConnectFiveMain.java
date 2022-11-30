@@ -36,23 +36,17 @@ public class ConnectFiveMain{
                     movement = player.generateMove(playersTurn, maxColumn, player2Name, b);
                 }
             }
-            // Catch the exception when the movement update is invalid
-            catch (IllegalArgumentException e) {
+            catch (IllegalArgumentException e) {                                             // Catch the exception when the movement update is invalid
                 System.out.println("PLEASE CHOOSE A COLUMN RANGE FROM 1 TO " + maxColumn);
             }
             if (movement != 0){
                 int currentRow = b.getCurrentRow(movement-1);            // Get the suitable row for each movement
                 if (currentRow == -1){                                              //  Theoretically, a free spot will hold a "O" value
-                                                                                   //   If the input was invalid, "-1" will be returned and keep running
-                    player.errorMessage("PLEASE RE-SELECT THE COLUMN");           //    till player can find a suitable spot.
-                // When player's move is approved
+                    player.errorMessage("PLEASE RE-SELECT THE COLUMN");     //   If the input was invalid, "-1" will be returned and keep running till player can find a suitable spot.
             } else {
-                playingBoard[currentRow][movement - 1] = playersTurn; // Fill the spot with player's assigned number
-                b.printGameBoard();        //  Print the current game board (with updated moved)
-                if (b.checkWinner(playersTurn, currentRow, movement)) {
-                    break;
-                }
-                if (playersTurn == 1) {   //   Each player alternated their turn after each move
+                playingBoard[currentRow][movement-1] = playersTurn;
+                b.printGameBoard();
+                if (playersTurn == 1) {                                            // Each player alternates turn after each move
                     playersTurn = 2;
                 } else {
                     playersTurn = 1;
@@ -61,7 +55,7 @@ public class ConnectFiveMain{
             }
         }
     }
-    // TO GREET TO PLAYERS //
+    // TO GREET PLAYERS //
     public static void intro(){
         System.out.println("""
                 \tXO Welcome to Connect Five Games OX\s

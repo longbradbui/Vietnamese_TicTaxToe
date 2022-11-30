@@ -53,7 +53,6 @@ public class Board {
             if(this.BOARD[currentRow][column] == currentPlayer){
                 streak += 1;
                 if(streak == 5) {
-                    System.out.println("Player " + currentPlayer + " wins by Vertical!!!!");
                     return true;
                 }
             } else {
@@ -70,7 +69,6 @@ public class Board {
             if(this.BOARD[row][currentColumn] == currentPlayer){
                 streak += 1;
                 if(streak == 5) {
-                    System.out.println("Player " + currentPlayer + " wins by Horizontal!!!!");
                     return true;
                 }
             } else {
@@ -81,18 +79,18 @@ public class Board {
     }
 
     // CHECK WINNING CONDITION FOR DIAGONAL //
-    // public boolean checkWinningDiagonal() {
-    //     int streak = 0;
-    //     boolean foundWinner = false;
-    //     return foundWinner;
-    // }
+     public boolean checkWinningDiagonal() {
+         int streak = 0;
+         boolean foundWinner = false;
+         return foundWinner;
+     }
     
-    public boolean checkWinner(int currentPlayer, int currentX, int currentY ) {
-        if (checkWinningHorizontal(currentY, currentPlayer) || checkWinningVertical(currentX, currentPlayer)) {
-            return true;
-        }
-        return false;
-    }
+//    public boolean checkWinner(int currentPlayer, int staticX, int staticY ) {
+//        if (checkWinningHorizontal(staticY, currentPlayer) || checkWinningVertical(staticX, currentPlayer)) {
+//            return true;
+//        }
+//        return false;
+//    }
 
 }
 
