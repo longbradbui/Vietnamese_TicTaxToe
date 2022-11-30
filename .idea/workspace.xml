@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="43fbd1e6-5d80-434e-8ec3-f05825e0d578" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConnectFiveMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/ConnectFiveMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/the_vietnameseTicTacToe_game/ConnectFiveMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/the_vietnameseTicTacToe_game/ConnectFiveMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/the_vietnameseTicTacToe_game/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/the_vietnameseTicTacToe_game/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="43fbd1e6-5d80-434e-8ec3-f05825e0d578" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
