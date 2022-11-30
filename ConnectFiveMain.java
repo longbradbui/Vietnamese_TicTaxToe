@@ -82,7 +82,8 @@ public class ConnectFiveMain {
                     // AFTER EACH MOVE, CHECK THE WINNING STATUS OF PLAYERS //
                     // Check if the current player in wining horizontally
                     if (b.checkWinningHorizontal(currentRow, playersTurn)) {
-                        System.out.println("\nPlayer " + playersTurn + " wins by Horizontal - [ROW " + currentRow + "] from top");
+                        int rowInBoard = currentRow + 1;
+                        System.out.println("\nPlayer " + playersTurn + " wins by Horizontal - [ROW " + rowInBoard + "] from top");
                         System.out.println("\t\t------*****------\n");
                         break; // Exits out of the method if winner were found //
                     }
