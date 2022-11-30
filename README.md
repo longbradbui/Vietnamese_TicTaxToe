@@ -20,17 +20,17 @@ All tests and methods passed with optimal runtime.
 Users do not need to install any Java Library, project is 100% text-based.  
 
 ## Project Demonstration
-<img src="C:\Users\bhoan\OneDrive\Pictures\Ảnh chụp màn hình\Screenshot_20221129_105542.png">
-<img src="C:\Users\bhoan\OneDrive\Pictures\Ảnh chụp màn hình\Screenshot_20221129_105717.png">
-<img src="C:\Users\bhoan\OneDrive\Pictures\Ảnh chụp màn hình\Screenshot_20221129_110811.png">
-<img src="C:\Users\bhoan\OneDrive\Pictures\Ảnh chụp màn hình\Screenshot_20221129_110831.png">
-<img src="C:\Users\bhoan\OneDrive\Pictures\Ảnh chụp màn hình\Screenshot_20221129_110857.png">
-<img src="C:\Users\bhoan\OneDrive\Pictures\Ảnh chụp màn hình\Screenshot_20221129_110913.png">
-<img src="C:\Users\bhoan\OneDrive\Pictures\Ảnh chụp màn hình\Screenshot_20221129_110935.png">
-<img src="C:\Users\bhoan\OneDrive\Pictures\Ảnh chụp màn hình\Screenshot_20221129_110955.png">
+![Greeting from our game](https://user-images.githubusercontent.com/86465921/204732295-31293f3c-eb72-4b47-a4da-cb9680c8303a.png)
+![Demonstrating rules to new players](https://user-images.githubusercontent.com/86465921/204732415-a2cf1429-bef4-4921-99c3-719293346362.png)
+![Asking players' name](https://user-images.githubusercontent.com/86465921/204732539-8951ae2d-0d5a-4170-a2ec-935d21b57fea.png)
+![Asking for board's dimension](https://user-images.githubusercontent.com/86465921/204733281-704164f2-67a6-4e85-92c1-16dc6fee9464.png)
+![Screenshot_20221129_110857](https://user-images.githubusercontent.com/86465921/204733689-18344d1b-f277-4723-8ef3-36772112b68d.png)
+![Screenshot_20221129_110913](https://user-images.githubusercontent.com/86465921/204733752-f1cb86ea-20f5-4db9-88ad-eb3d4c66679e.png)
+![Screenshot_20221129_110935](https://user-images.githubusercontent.com/86465921/204733774-e9a82b06-b0d5-4040-87da-2d1e22ebcb74.png)
+![Screenshot_20221129_110955](https://user-images.githubusercontent.com/86465921/204733788-8e91992c-a66f-4a6f-a056-ae7d1c168e8a.png)
 
 ## Logic
-Logic and explanation are well written in the program.
+Logic  are well written throughout the program. Project applies basic knowledge covered in CS141 with manipulation of Object Oriented Programming
 
 ## Authors
 Hoang Long Bui
