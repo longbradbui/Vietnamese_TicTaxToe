@@ -24,7 +24,7 @@ public class ConnectFiveMain {
     // TO GET TO KNOW ABOUT OUR PLAYERS //
     public static void getToKnow() {
         Scanner console1 = new Scanner(System.in);
-        System.out.print("First player:\t");
+        System.out.print("\nFirst player:\t");
         String playerOne = console1.next();
         System.out.print("Second player:\t");
         String playerTwo = console1.next();
@@ -93,12 +93,18 @@ public class ConnectFiveMain {
                         System.out.println("\t\t------*****------\n");
                         break; // Exits out of the method if winner were found //
                     }
-                    // Check if the current player in wining diagonally
-//                    if (b.checkWinningDiagonal(movement, currentRow, playersTurn)) {
-//                        System.out.println("\nPlayer " + playersTurn + " wins by Diagonal");
-//                        System.out.println("\t\t------*****------\n");
-//                        break;
-//                    }
+                    //Check if the current player in wining diagonally (GOING DOWN RIGHT)
+                    if (b.checkWinningDiagonal_DownRight(movement - 1, currentRow, playersTurn)) {
+                        System.out.println("\nPlayer " + playersTurn + " wins by Diagonal - [GOING DOWN RIGHT]");
+                        System.out.println("\t\t------*****------\n");
+                        break;
+                    }
+                    //Check if the current player in wining diagonally (GOING DOWN LEFT)
+                    if (b.checkWinningDiagonal_DownLeft(movement - 1, currentRow, playersTurn)) {
+                        System.out.println("\nPlayer " + playersTurn + " wins by Diagonal - [GOING DOWN LEFT]");
+                        System.out.println("\t\t------*****------\n");
+                        break;
+                    }
                     // If no winner were found, each player alternates their turn //
                     if (playersTurn == 1) {
                         playersTurn = 2;
