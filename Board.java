@@ -91,44 +91,47 @@ public class Board {
 
         // Set up a while loop runs until it hits the boundaries of size
         while ((row < this.BOARD.length  &&  col < this.BOARD[0].length)) {
-            if (this.BOARD[row][col] == currentPlayer) {
-                streak += 1;
-                if (streak == 5)
-                    return true;
-            } else {
+            if (this.BOARD[row][col] == currentPlayer) {  // If the value at the coordinate equals the value assigned to player
+                streak += 1;                             //  Increment the streak by 1
+                if (streak == 5)                        //   If the streak hits 5
+                    return true;                       //    => Return true, we found the winner of the game
+            } else {                                  //     If not, then reset the streak back to 0
                 streak = 0;
             }
-            row += 1;
-            col += 1;
+            row += 1;                               //       Shift the value of row
+            col += 1;                              //        Shift the value of column
         }
-        return false;
+        return false;                           //           Return false if no winner were found
     }
 
     // CHECK WINNING CONDITION FOR DIAGONAL //
     public boolean checkWinningDiagonal_DownLeft(int col, int row, int currentPlayer) {
-        int streak = 0;
-        boolean moveUp = true;
+        int streak = 0;                          // Declare a variable keep track of the player's streak
+        boolean moveUp = true;                  //  Declare a variable to validate whether the coordinate is by the edge of the playing board
 
-        while (moveUp) {
-            if (row == 0 || col == 0) {
-                moveUp = false;
+        while (moveUp) {                       //   While we can still move up (Diagonally)
+            if (row == 0 || col == 0) {       //    Either column or row hits 0
+                moveUp = false;              //     Then STOP
             } else {
-                row -= 1;
-                col += 1;
+                row -= 1;                  //      Decrement by 1 unit 
+                col += 1;                 //       Increment by 1 unit 
             }
+            // In this case, column is going UP RIGHT to top, shifting to next column in the array, which behaves a little different than row
         }
+                // Set up a while loop runs until it hits the boundaries of size
+
         while ((row < this.BOARD.length && row > -1) && (col > -1 &&  col < this.BOARD[0].length)) {
-            if (this.BOARD[row][col] == currentPlayer) {
-                streak += 1;
-                if (streak == 5)
-                    return true;
-            } else {
+            if (this.BOARD[row][col] == currentPlayer) {  // If the value at the coordinate equals the value assigned to player
+                streak += 1;                             //  Increment the streak by 1
+                if (streak == 5)                        //   If the streak hits 5
+                    return true;                       //    => Return true, we found the winner of the game
+            } else {                                  //     If not, then reset the streak back to 0
                 streak = 0;
             }
-            row += 1;
-            col -= 1;
+            row += 1;                               //       Shift the value of row
+            col -= 1;                              //        Shift DOWN the value of column, we are going to the left
         }
-        return false;
+        return false;                           //           Return false if no winner were found
     }
 }
 

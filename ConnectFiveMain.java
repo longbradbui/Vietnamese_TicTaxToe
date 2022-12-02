@@ -73,9 +73,9 @@ public class ConnectFiveMain {
                 System.out.println("PLEASE CHOOSE A COLUMN RANGE FROM 1 TO " + maxColumn);
             }
             if (movement != 0) {
-                int currentRow = b.getCurrentRow(movement - 1);                 // Get the suitable row for each movement
-                if (currentRow == -1) {                                                    //  Theoretically, a free spot will hold a "O" value
-                    player.errorMessage("PLEASE RE-SELECT THE COLUMN");            //   If the input was invalid, "-1" will be returned and keep running till player can find a suitable spot.
+                int currentRow = b.getCurrentRow(movement - 1);                          // Get the suitable row for each movement
+                if (currentRow == -1) {                                                 //  Theoretically, a free spot will hold a "O" value
+                    player.errorMessage("PLEASE RE-SELECT THE COLUMN");                //   If the input was invalid, "-1" will be returned and keep running till player can find a suitable spot.
                 } else {
                     playingBoard[currentRow][movement - 1] = playersTurn;                //    Fill the spot with player's assigned number. Update the playing board with the obtained row and column.
                     b.printGameBoard();                                                 //     The [column] is [movement-1] because array is zero based index
@@ -85,27 +85,27 @@ public class ConnectFiveMain {
                         int rowInBoard = currentRow + 1;
                         System.out.println("\nPlayer " + playersTurn + " wins by Horizontal - [ROW " + rowInBoard + "] from top");
                         System.out.println("\t\t------*****------\n");
-                        break; // Exits out of the method if winner were found //
+                        break; // Exits out of the method if winner were found 
                     }
                     // Check if the current player in wining vertically
                     if (b.checkWinningVertical(movement - 1, playersTurn)) {
                         System.out.println("\nPlayer " + playersTurn + " wins by Vertical - [COLUMN " + movement + "] from left");
                         System.out.println("\t\t------*****------\n");
-                        break; // Exits out of the method if winner were found //
+                        break; // Exits out of the method if winner were found 
                     }
                     //Check if the current player in wining diagonally (GOING DOWN RIGHT)
                     if (b.checkWinningDiagonal_DownRight(movement - 1, currentRow, playersTurn)) {
                         System.out.println("\nPlayer " + playersTurn + " wins by Diagonal - [GOING DOWN RIGHT]");
                         System.out.println("\t\t------*****------\n");
-                        break;
+                        break; // Exits out of the method if winner were found 
                     }
                     //Check if the current player in wining diagonally (GOING DOWN LEFT)
                     if (b.checkWinningDiagonal_DownLeft(movement - 1, currentRow, playersTurn)) {
                         System.out.println("\nPlayer " + playersTurn + " wins by Diagonal - [GOING DOWN LEFT]");
                         System.out.println("\t\t------*****------\n");
-                        break;
+                        break; // Exits out of the method if winner were found 
                     }
-                    // If no winner were found, each player alternates their turn //
+                    // IF NO WINNER WAS FOUND, PLAYERS ALTERNATE  //
                     if (playersTurn == 1) {
                         playersTurn = 2;
                     } else {
@@ -123,13 +123,13 @@ public class ConnectFiveMain {
         do{
             gameMain();
             Scanner cs = new Scanner(System.in);
-            System.out.println("Would you like top play another game? ");
+            System.out.println("Would you like to play another game? ");
             String answer = cs.next();
             if ((answer.equals("y") || answer.equals("Y") || answer.equals("yes") || answer.equals("Yes"))) {
                 playAgain = true;
             } else {
                 playAgain = false;
-                System.out.println("Thanks For Playing With Us Today!!!");
+                System.out.println("!!! Thanks For Playing With Us Today !!!");
             }
         } while (playAgain);
     }

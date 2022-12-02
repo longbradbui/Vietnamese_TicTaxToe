@@ -21,8 +21,8 @@ public class Player {
         int playerMove = console2.nextInt();                    //  Take in an integer variable
             if (playerMove > 0 && playerMove <= maxColumn) {   //   If the number satisfies the condition
                 return playerMove;                            //    Then return player's column
-            }
-            throw new IllegalArgumentException();           //      Throw exception if fails the condition
+            }                                                //     If the input was invalid
+            throw new IllegalArgumentException();           //      Then throw exception 
     }
 
     // PRINTS OUT ERROR MESSAGE WITH SPECIFIC ERROR //
