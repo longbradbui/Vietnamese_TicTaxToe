@@ -30,10 +30,16 @@ Users do not need to install any Java Library, project is 100% text-based.
 ![Screenshot_20221129_110955](https://user-images.githubusercontent.com/86465921/204733788-8e91992c-a66f-4a6f-a056-ae7d1c168e8a.png)
 
 ## Logic
-Logic are well written throughout the program. Project applies basic knowledge covered in CS141 with manipulation of Object Oriented Programming
+Logic are well explained throughout the program. The project itself applies basic knowledge covered in CS141 with manipulation of <b><i>Object Oriented Programming</i></b>.
 <br> </br>
+<img width="325" alt="Screen Shot 2022-12-01 at 18 42 27" src="https://user-images.githubusercontent.com/86465921/205203602-8cc7751d-12c5-46b0-9048-1008417b8fd5.png">
 
-## Project Requirements
+<img width="719" alt="Screen Shot 2022-12-01 at 18 43 14" src="https://user-images.githubusercontent.com/86465921/205203686-0afb9af0-dc7c-4fe6-a0b5-f7ee5f1dd5b0.png">
+
+<img width="351" alt="Screen Shot 2022-12-01 at 18 43 30" src="https://user-images.githubusercontent.com/86465921/205203717-d4cf1b70-72c0-47f3-a176-7273a8814cf1.png">
+
+
 ## Authors
 Hoang Long Bui
+
 
